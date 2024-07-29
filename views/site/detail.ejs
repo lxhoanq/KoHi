@@ -1,0 +1,88 @@
+<% include layout/header.ejs %>
+<!-- -----------------------DELIVERY---------------------------------------------- -->
+<section class="detail">
+  <div class="container">
+    <div class="detail-top">
+      <p>CHI TIẾT ĐƠN HÀNG</p>
+    </div>
+    <h1>Mã đơn hàng:<span style="font-size: 20px; color: #378000;">KoHi-<%= sessionID.substring(0, 8) %></span></h1>
+    <div class="detail-text">
+      <div class="detail-text-left-content">
+        <p><span style="font-weight: bold; color:red">Thông tin giao hàng</span></p>
+        <br>
+        <% if (order) { %>
+          <p><span style="font-weight: bold;">Họ và tên</span>: <%= order.customer_name %></p>
+          <p><span style="font-weight: bold;">Số ĐT</span>: <%= order.customer_phone %></p>
+          <p><span style="font-weight: bold;">Địa chỉ</span>: 
+            <%= order.customer_diachi %>, 
+            <%= order.address_info.phuong_xa %>, 
+            <%= order.address_info.quan_huyen %>, 
+            <%= order.address_info.tinh_tp %>
+          </p>
+        <% } %>
+        <% if (payment) { %>
+          <p><span style="font-weight: bold;">Phương thức giao hàng</span>: <%= payment.giaohang %></p>
+          <p><span style="font-weight: bold;">Phương thức thanh toán</span>: <%= payment.thanhtoan %></p>
+        <% } %>
+      </div>
+      <div class="detail-text-right-content">
+        <p><span style="font-weight: bold;color:red">Thông tin đơn hàng hàng</span></p>
+        <br>
+        <div class="detail-text-right">
+          <table>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Tên sản phẩm</th>
+              <th>Màu</th>
+              <th>Size</th>
+              <th>SL</th>
+              <th>Giá</th>
+            </tr>
+            <% let SL = 0; let TT = 0; %>
+            <% cartItems.forEach(item => { %>
+              <tr>
+                <td><img src="<%= item.sanpham_anh %>" alt=""></td>
+                <td><p><%= item.sanpham_tieude %></p></td>
+                <td><img src="<%= item.color_anh %>" alt=""></td>
+                <td><p><%= item.sanpham_size %></p></td>
+                <td><span><%= item.quantitys %></span></td>
+                <td><p><%= parseInt(item.sanpham_gia).toLocaleString() %><sup>đ</sup></p></td>
+              </tr>
+              <% SL += parseInt(item.quantitys); %>
+              <% TT += parseInt(item.sanpham_gia) * parseInt(item.quantitys); %>
+            <% }) %>
+          </table>
+        </div>
+        <div class="detail-content-right-bottom">
+          <table>
+            <tr>
+              <th colspan="2"><p>TỔNG TIỀN GIỎ HÀNG</p></th>
+            </tr>
+            <tr>
+              <td>TỔNG SẢN PHẨM</td>
+              <td><%= SL %></td>
+            </tr>
+            <tr>
+              <td>TỔNG TIỀN HÀNG</td>
+              <td><p><%= TT.toLocaleString() %><sup>đ</sup></p></td>
+            </tr>
+            <tr>
+              <td>THÀNH TIỀN</td>
+              <td><p><%= TT.toLocaleString() %><sup>đ</sup></p></td>
+            </tr>
+            <tr>
+              <td>TẠM TÍNH</td>
+              <td><p style="font-weight: bold; color: black;"><%= TT.toLocaleString() %><sup>đ</sup></p></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="success-button">
+      <a href="/continue-shopping"><button>TIẾP TỤC MUA SẮM</button></a>
+    </div>
+    <br>
+    <p style="text-align: center;">Mọi thắc mắc quý khách vui lòng liên hệ hotline <span style="font-size: 20px; color: red;">032 838 6868 </span> hoặc chat với kênh hỗ trợ trên website để được hỗ trợ nhanh nhất.</p>
+  </div>
+</section>
+<% include layout/footer.ejs %>

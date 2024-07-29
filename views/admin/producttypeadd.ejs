@@ -1,0 +1,24 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="subcartegory-add-content">
+        <form action="/producttypeadd" method="POST" >
+            <label for="danhmuc_id">Chọn danh mục<span style="color: red;">*</span></label><br>
+            <select required="required" name="danhmuc_id">
+                <option value="">--Chọn--</option>
+                <% categories.forEach(category => { %>
+                    <option value="<%= category.danhmuc_id %>"><%= category.danhmuc_ten %></option>
+                <% }); %>
+            </select><br>
+            <label for="loaisanpham_name">Vui lòng thêm loại sản phẩm<span style="color: red;">*</span></label><br>
+            <input class="subcartegory-input" type="text" name="loaisanpham_name"><br>
+            <button class="admin-btn" type="submit">Gửi</button>
+        </form>
+    </div>
+</div>
+</section>
+<section>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html>

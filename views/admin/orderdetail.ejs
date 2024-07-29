@@ -1,0 +1,47 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>Mã đơn hàng</th>
+                <th>Tên Sản phẩm</th>
+                <th>Ảnh</th>
+                <th>SL</th>
+                <th>Màu</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+            </tr>
+            <% let totalAmount = 0; %>
+            <% order.products.forEach((product, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td>KoHi-<%= order.session_idA.substring(0, 5) %></td>
+                    <td><%= product.sanpham_tieude %></td>
+                    <td><img style="width:50px" src="../<%= product.sanpham_anh %>" alt=""></td>
+                    <td><%= product.quantitys %></td>
+                    <td><img style="width:30px" src="../<%= product.color_anh %>" alt=""></td>
+                    <td><%= parseInt(product.sanpham_gia).toLocaleString() %></td>
+                    <td>
+                        <% 
+                            const amount = parseInt(product.sanpham_gia) * parseInt(product.quantitys);
+                            totalAmount += amount;
+                        %>
+                        <%= amount.toLocaleString() %>
+                    </td>
+                </tr>
+            <% }); %>
+            <tr>
+                <td style="font-weight: bold;" colspan="7">Tổng tiền</td>
+                <td><%= totalAmount.toLocaleString() %></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</section>
+<section>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html>

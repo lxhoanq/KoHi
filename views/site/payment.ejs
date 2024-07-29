@@ -1,0 +1,87 @@
+<% include layout/header.ejs %>
+
+<section class="payment">
+    <div class="container">
+        <div class="payment-top-wrap">
+            <div class="payment-top">
+                <div class="delivery-top-delivery payment-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="delivery-top-adress payment-top-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="delivery-top-payment payment-top-item">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <% if (cartItems && cartItems.length > 0) { %>
+            <div class="payment-content row">
+                <div class="payment-content-left">
+                    <form action="/payment" method="POST">
+                        <div class="payment-content-left-method-delivery">
+                            <p style="font-weight: bold;">Phương thức giao hàng</p> <br>
+                            <div class="payment-content-left-method-delivery-item">
+                                <input name="deliver-method" value="Giao hàng chuyển phát nhanh" checked type="radio">
+                                <label for="">Giao hàng chuyển phát nhanh</label>
+                            </div>
+                            <!-- Các phương thức giao hàng khác -->
+                        </div>
+                        <br>
+                        <div class="payment-content-left-method-payment">
+                            <p style="font-weight: bold;">Phương thức thanh toán</p> <br>
+                            <p>Mọi giao dịch đều được bảo mật và mã hóa. Thông tin thẻ tín dụng sẽ không bao giờ được lưu lại.</p> <br>
+                            <div class="payment-content-left-method-payment-item">
+                                <input value="Thu tiền tận nơi" checked name="method-payment" type="radio">
+                                <label for="">Thu tiền tận nơi</label>
+                            </div>
+                        </div>
+                        <div class="payment-content-right-payment">
+                            <button type="submit">HOÀN THÀNH</button>
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="payment-content-right">
+                    <div class="payment-content-right-button">
+                        <input type="text" placeholder="Mã giảm giá/Quà tặng">
+                        <button><i class="fas fa-check"></i></button>
+                    </div>
+                    <div class="payment-content-right-mnv">
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        <% show_cart.forEach(function(cart) { %>
+                            <tr>
+                                <td><%= cart.sanpham_tieude %></td>
+                                <td><%= parseInt(cart.sanpham_gia).toLocaleString('vi-VN') %><sup>đ</sup></td>
+                                <td><%= cart.quantitys %></td>
+                                <td><%= (parseInt(cart.sanpham_gia) * parseInt(cart.quantitys)).toLocaleString('vi-VN') %><sup>đ</sup></td>
+                            </tr>
+                        <% }); %>
+                    
+                        <tr style="border-top: 2px solid red">
+                            <td style="font-weight: bold;border-top: 2px solid #dddddd" colspan="3">Tổng</td>
+                            <td style="font-weight: bold;border-top: 2px solid #dddddd"><%= TT.toLocaleString('vi-VN') %><sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
+                            <td style="font-weight: bold;"><%= TT.toLocaleString('vi-VN') %><sup>đ</sup></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <% } else { %>
+            <p>Bạn vẫn chưa thêm sản phẩm nào vào giỏ hàng, Vui lòng chọn sản phẩm nhé!</p>
+        <% } %>
+    </div>
+</section>
+
+<% include layout/footer.ejs %>

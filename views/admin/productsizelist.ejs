@@ -1,0 +1,31 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>ID</th>
+                <th>ID Sản phẩm</th>
+                <th>Mã Sản phẩm</th>
+                <th>Size Sản phẩm</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+            <% sanphamSizes.forEach((size, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= size.sanpham_size_id %></td>
+                <td><%= size.sanpham_id %></td>
+                <td><%= size.sanpham.sanpham_ma %></td>
+                <td><%= size.sanpham_size %></td>
+                <td><a style="color: rgb(0, 0, 0);" href="/deletesize/<%= size.sanpham_size_id %>">Xóa</a></td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>        
+</div>
+<section>
+</section>
+<script src="js/script.js"></script>
+</body>
+</html>

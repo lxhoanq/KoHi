@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "66a355632aef453fdc53d47b"
+  },
+  "cartA_id": 79,
+  "sanpham_anh": "/uploads/sanpham_anh-1721970416751.jpg",
+  "session_idA": "JOBuj5fDhmJGP_mWtsOjQNGgrJXo-SB0",
+  "user_id": "6",
+  "sanpham_id": 2,
+  "sanpham_tieude": "FRIENDS TEE - CREAM",
+  "sanpham_gia": "395000",
+  "color_anh": "/uploads/color_anh-1721969468189.png",
+  "quantitys": "1",
+  "sanpham_size": "S",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a355c02aef453fdc53d47f"
+  },
+  "cartA_id": 80,
+  "sanpham_anh": "/uploads/sanpham_anh-1720720093200.png",
+  "session_idA": "-srq-aDhHwByZZj3JI_o6HPC2WyyHhJs",
+  "user_id": "6",
+  "sanpham_id": 0,
+  "sanpham_tieude": "AKASH TEE - BLACK",
+  "sanpham_gia": "395000",
+  "color_anh": "/uploads/color_anh-1720716480092.png",
+  "quantitys": "1",
+  "sanpham_size": "M",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a356ae2aef453fdc53d483"
+  },
+  "cartA_id": 81,
+  "sanpham_anh": "/uploads/sanpham_anh-1721971316460.jpg",
+  "session_idA": "7dOS8mv2dycjBVUBWkvgWZBIuFzUbieG",
+  "user_id": "6",
+  "sanpham_id": 3,
+  "sanpham_tieude": "DRAGON PRINTED SHIRTS - BLACK",
+  "sanpham_gia": "395000",
+  "color_anh": "/uploads/color_anh-1720716480092.png",
+  "quantitys": "1",
+  "sanpham_size": "M",
+  "__v": 0
+}]

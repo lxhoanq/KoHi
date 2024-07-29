@@ -1,0 +1,31 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="subcartegory-add-content">
+        <form action="/productsizeadd" method="POST" >
+            <label for="">Chọn mã sản phẩm<span style="color: red;">*</span></label> <br>
+            <select required="required" name="sanpham_id">
+                <option value="">--Chọn--</option>
+                <% products.forEach(product => { %>
+                    <option value="<%= product.sanpham_id %>"><%= product.sanpham_ma %></option>
+                <% }); %>
+            </select> <br>
+            <label for="">Chọn Size sản phẩm<span style="color: red;">*</span></label> <br>
+            <select name="sanpham_size" id="">
+                <option value="">--Chọn--</option>
+                <option value="S">Size S</option>
+                <option value="M">Size M</option>
+                <option value="L">Size L</option>
+                <option value="XL">Size XL</option>
+                <option value="XXL">Size XXL</option>
+            </select>
+            <button class="admin-btn" type="submit">Gửi</button>             
+        </form>
+    </div>           
+</div>
+</section>
+<section>
+</section>
+<script src="js/script.js"></script>
+</body>
+</html>

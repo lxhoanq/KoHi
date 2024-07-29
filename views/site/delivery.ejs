@@ -1,0 +1,174 @@
+<% include layout/header.ejs %>
+<section class="delivery">
+    <div class="container">
+        <div class="delivery-top-wrap">
+            <div class="delivery-top">
+                <div class="delivery-top-delivery delivery-top-item">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="delivery-top-adress delivery-top-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="delivery-top-payment delivery-top-item">
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <% if (typeof show_cart !== 'undefined' && show_cart.length > 0) { %>
+        <div class="delivery-content row">
+            <div class="delivery-content-left">
+                <!-- Display saved address if available -->
+                <% if (user && user.customer_diachi && user.customer_tinh && user.customer_huyen && user.customer_xa) { %>
+                    <div id="saved-address">
+                        <h3>Địa chỉ đã lưu:</h3>
+                        <p style="font-family: var(--main-text-font); font-size: 13px;">Tên người nhận: <%= user.user_Name %></p>
+                        <p style="font-family: var(--main-text-font); font-size: 13px;">Số điện thoại: <%= user.user_phone %></p>
+                        <p style="font-family: var(--main-text-font); font-size: 13px;"> Địa chỉ: 
+                            <%= user.customer_diachi %>, 
+                            <% if (userAddress.phuong_xa_info.length > 0) { %>
+                                <%= userAddress.phuong_xa_info[0].phuong_xa %>,
+                            <% } %> 
+                            <% if (userAddress.quan_huyen_info.length > 0) { %>
+                                <%= userAddress.quan_huyen_info[0].quan_huyen %>,
+                            <% } %>
+                            <% if (userAddress.tinh_tp_info.length > 0) 
+                            { %><%= userAddress.tinh_tp_info[0].tinh_tp %>.<% } %>
+                        </p>
+                        <div class="delivery-content-left-button row">
+                        <button type="button" onclick="showNewAddressForm()">Chọn địa chỉ khác</button>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div id="saved-address" style="display: none;">
+                        <!-- This will be hidden if no saved address is available -->
+                    </div>
+                <% } %>
+
+                <!-- Form for new address -->
+                <div id="new-address-form" style="<%= user && user.customer_diachi ? 'display: none;' : 'display: block;' %>;">
+                    <form action="/delivery" method="post">
+                        <input type="hidden" name="use_saved_address" id="use_saved_address" value="false">
+                        <p>Vui lòng chọn địa chỉ giao hàng</p>
+                    <br>
+                    <div class="delivery-content-left-input-top row">
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Họ tên <span style="color: red;">*</span></label>
+                            <input name="customer_name" required type="text" value="<%= user ? user.user_Name : '' %>">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Điện thoại <span style="color: red;">*</span></label>
+                            <input name="customer_phone" required type="text" value="<%= user ? user.user_phone : '' %>">
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Tỉnh/Tp <span style="color: red;">*</span></label>
+                            <select name="customer_tinh" id="tinh_tp" required>
+                                <option value="#">Chọn Tỉnh/Tp</option>
+                                <% show_diachi.forEach(function(tinh) { %>
+                                    <option value="<%= tinh._id.ma_tinh %>"><%= tinh._id.tinh_tp %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Quận/Huyện <span style="color: red;">*</span></label>
+                            <select name="customer_huyen" id="quan_huyen" required>
+                                <option value="#">Chọn Quận/Huyện</option>
+                            </select>
+                        </div>
+                        <div class="delivery-content-left-input-top-item">
+                            <label for="">Phường/Xã <span style="color: red;">*</span></label>
+                            <select name="customer_xa" id="phuong_xa" required>
+                                <option value="#">Chọn Phường/Xã</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="delivery-content-left-input-bottom">
+                        <label for="">Địa chỉ <span style="color: red;">*</span></label>
+                        <input name="customer_diachi" required type="text">
+                    </div>
+                    <div class="delivery-content-left-button row">
+                        <a href="/cart">← Quay lại giỏ hàng</a>
+                        <button type="submit">THANH TOÁN VÀ GIAO HÀNG</button>
+                    </div>
+                    </form>
+                </div>
+
+                <!-- Button to select saved address -->
+                <div class="delivery-content-left-button row" id="select-saved-address" style="<%= user && user.customer_diachi ? 'display: block;' : 'display: none;' %>;">
+                    <button style="display: flex;;" type="button" onclick="useSavedAddress()">THANH TOÁN VÀ GIAO HÀNG</button> <br>
+                    <a href="/cart">← Quay lại giỏ hàng</a>
+                </div>
+            </div>
+
+            <!-- Display cart items and total amount -->
+            <div class="delivery-content-right">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    
+                        <% show_cart.forEach(cart => { %>
+                            <tr>
+                                <td><%= cart.sanpham_tieude %></td>
+                                <td><%= parseInt(cart.sanpham_gia).toLocaleString('vi-VN') %> <sup>đ</sup></td>
+                                <td><%= cart.quantitys %></td>
+                                <td><%= (parseInt(cart.sanpham_gia) * parseInt(cart.quantitys)).toLocaleString('vi-VN') %><sup>đ</sup> </td>
+                            </tr>
+                        <% }); %>
+                        <tr style="border-top: 2px solid red">
+                            <td style="font-weight: bold;border-top: 2px solid #dddddd" colspan="3">Tổng</td>
+                            <td style="font-weight: bold;border-top: 2px solid #dddddd"><%= TT.toLocaleString('vi-VN') %><sup>đ</sup></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <% } else { %>
+        <p>Giỏ hàng của bạn đang trống. <a href="/cart">← Quay lại giỏ hàng</a></p>
+        <% } %>
+    </div>
+</section>
+
+<script>
+function showNewAddressForm() {
+    document.getElementById('new-address-form').style.display = 'block';
+    document.getElementById('saved-address').style.display = 'none';
+    document.getElementById('select-saved-address').style.display = 'none';
+    document.getElementById('use_saved_address').value = 'false';
+}
+
+function useSavedAddress() {
+    document.getElementById('use_saved_address').value = 'true';
+    document.querySelector('form').submit();
+}
+
+function submitDeliveryForm() {
+    document.getElementById('use_saved_address').value = 'false';
+    document.querySelector('form').submit();
+}
+$('#tinh_tp').change(function() {
+        var tinh_id = $(this).val();
+        $.get('/delivery/diachiqh', { tinh_id: tinh_id }, function(data) {
+            $('#quan_huyen').empty().append('<option value="#">Chọn Quận/Huyện</option>');
+            data.forEach(function(quan_huyen) {
+                $('#quan_huyen').append('<option value="' + quan_huyen._id.ma_qh + '">' + quan_huyen._id.quan_huyen + '</option>');
+            });
+        });
+    });
+    $('#quan_huyen').change(function() {
+        var quan_huyen_id = $(this).val();
+        $.get('/delivery/diachipx', { quan_huyen_id: quan_huyen_id }, function(data) {
+            $('#phuong_xa').empty().append('<option value="#">Chọn Phường/Xã</option>');
+            data.forEach(function(phuong_xa) {
+                $('#phuong_xa').append('<option value="' + phuong_xa._id.ma_px + '">' + phuong_xa._id.phuong_xa + '</option>');
+            });
+        });
+    });
+</script>
+
+<% include layout/footer.ejs %>

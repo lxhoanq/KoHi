@@ -1,0 +1,67 @@
+<section class="admin-content row space-between">
+    <div class="admin-content-left">
+    <div class="header-top-left">
+        <a href=""><p> <span>Ko</span>Hi</p></a>
+    </div>
+        <ul>
+            <li>
+                <a href="#">
+                  <img style="width:20px" src="/icon/hi.png" alt="">
+                  Chào:  
+                  <span style="color:white; font-size:22px">
+                    <% if (user) { %>
+                      <%= user.user_Name %>
+                    <% } %>
+                  </span>
+                  <span style="color: red; font-size:20px">&#10084;</span>
+                </a>
+            </li>
+            <li><a href="#"><img style="width:30px" src="/icon/note.svg" alt="">Đơn hàng</a>
+                <ul>
+                    <li><a href="/orderlist">Chưa hoàn thành</a></li>
+                    <li><a href="/orderlistdone">Đã hoàn thành</a></li>
+                    <li><a href="/orderlistall">Tất cả Đơn hàng</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img style="width:20px" src="/icon/options.png" alt="">Danh Mục</a>
+                <ul>
+                    <li><a href="/categorylist">Danh sách</a></li>
+                    <li><a href="/categoryadd">Thêm</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img style="width:20px" src="/icon/menu.png" alt="">Loại Sản Phẩm</a>
+                <ul>
+                    <li><a href="/producttypelist">Danh sách</a></li>
+                    <li><a href="/producttypeadd">Thêm</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img style="width:20px" src="/icon/colour.png" alt="">Màu sắc</a>
+                <ul>
+                    <li><a href="/colorlist">Danh sách</a></li>
+                    <li><a href="/coloradd">Thêm</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img style="width:20px" src="/icon/article.png" alt="">Sản phẩm</a>
+                <ul>
+                    <li><a href="/productlist">Danh sách</a></li>
+                    <li><a href="/productadd">Thêm</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img style="width:20px" src="/icon/picture.png" alt="">Ảnh Sản phẩm</a>
+                <ul>
+                    <li><a href="/productphotolist">Danh sách</a></li>
+                    <li><a href="/productphotoadd">Thêm</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img style="width:20px" src="/icon/size.png" alt="">Size Sản phẩm</a>
+                <ul>
+                    <li><a href="/productsizelist">Danh sách</a></li>
+                    <li><a href="/productsizeadd">Thêm</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/dang-xuat.html"> <img style="width:20px" src="/icon/logout.png" alt="">Đăng Xuất</a>
+                
+            </li>
+        </ul>
+    </div>

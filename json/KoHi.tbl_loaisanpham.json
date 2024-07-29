@@ -1,0 +1,62 @@
+[{
+  "_id": {
+    "$oid": "668d40aec56b8087d8a2485d"
+  },
+  "loaisanpham_id": 4,
+  "danhmuc_id": 2,
+  "loaisanpham_ten": "Áo thun"
+},
+{
+  "_id": {
+    "$oid": "66a330546af81d65047673c8"
+  },
+  "loaisanpham_id": 0,
+  "danhmuc_id": 2,
+  "loaisanpham_ten": "Áo sơ mi",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3305d6af81d65047673c9"
+  },
+  "loaisanpham_id": 1,
+  "danhmuc_id": 2,
+  "loaisanpham_ten": "Áo khoác",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a330636af81d65047673ca"
+  },
+  "loaisanpham_id": 2,
+  "danhmuc_id": 2,
+  "loaisanpham_ten": "Quần",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a330826af81d65047673cb"
+  },
+  "loaisanpham_id": 3,
+  "danhmuc_id": 0,
+  "loaisanpham_ten": "Áo thun",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a331656af81d65047673ce"
+  },
+  "loaisanpham_id": 6,
+  "danhmuc_id": 0,
+  "loaisanpham_ten": "Quần",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a33b8c6af81d6504767405"
+  },
+  "loaisanpham_id": 7,
+  "danhmuc_id": 1,
+  "loaisanpham_ten": "Contact",
+  "__v": 0
+}]

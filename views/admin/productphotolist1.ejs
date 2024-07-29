@@ -1,0 +1,32 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>ID Ảnh</th>
+                <th>ID Sản phẩm</th>
+                <th>Mã Sản phẩm</th>
+                <th>Ảnh</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+
+            <% productPhotos.forEach((photo, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= photo.sanpham_anh_id %></td>
+                <td><%= photo.sanpham_id %></td>
+                <td><%= photo.sanpham_info.length > 0 ? photo.sanpham_info[0].sanpham_ma : 'N/A' %></td>
+                <td><img style="width: 100px; height: auto" src="<%= photo.sanpham_anh %>" alt="Product Image"></td>
+                <td><a href="#" onclick="deletePhoto('<%= photo.sanpham_anh_id %>');">Xóa</a></td>
+            </tr>
+            <% }) %>
+            
+        </table>
+    </div>
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

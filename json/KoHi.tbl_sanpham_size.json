@@ -1,0 +1,414 @@
+[{
+  "_id": {
+    "$oid": "66906e1ac89ee21134e4184d"
+  },
+  "sanpham_size_id": 3,
+  "sanpham_id": 0,
+  "sanpham_size": "S",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66906e28c89ee21134e4184e"
+  },
+  "sanpham_size_id": 4,
+  "sanpham_id": 0,
+  "sanpham_size": "M",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66906e2ec89ee21134e4184f"
+  },
+  "sanpham_size_id": 5,
+  "sanpham_id": 0,
+  "sanpham_size": "L",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66906e35c89ee21134e41850"
+  },
+  "sanpham_size_id": 6,
+  "sanpham_id": 0,
+  "sanpham_size": "XL",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66906e3dc89ee21134e41851"
+  },
+  "sanpham_size_id": 7,
+  "sanpham_id": 0,
+  "sanpham_size": "XXL",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66906e82c89ee21134e41853"
+  },
+  "__v": 0,
+  "sanpham_id": 1,
+  "sanpham_size_id": 6,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66906e82c89ee21134e41854"
+  },
+  "__v": 0,
+  "sanpham_id": 1,
+  "sanpham_size_id": 7,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66906e82c89ee21134e41855"
+  },
+  "__v": 0,
+  "sanpham_id": 1,
+  "sanpham_size_id": 8,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66906e82c89ee21134e41856"
+  },
+  "__v": 0,
+  "sanpham_id": 1,
+  "sanpham_size_id": 9,
+  "sanpham_size": "XL"
+},
+{
+  "_id": {
+    "$oid": "66906e82c89ee21134e41857"
+  },
+  "__v": 0,
+  "sanpham_id": 1,
+  "sanpham_size_id": 10,
+  "sanpham_size": "XXL"
+},
+{
+  "_id": {
+    "$oid": "66a32e4e6af81d65047673bb"
+  },
+  "__v": 0,
+  "sanpham_id": 2,
+  "sanpham_size_id": 1,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a32e4e6af81d65047673bc"
+  },
+  "__v": 0,
+  "sanpham_id": 2,
+  "sanpham_size_id": 2,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a32e4e6af81d65047673bd"
+  },
+  "__v": 0,
+  "sanpham_id": 2,
+  "sanpham_size_id": 3,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a32e4e6af81d65047673be"
+  },
+  "__v": 0,
+  "sanpham_id": 2,
+  "sanpham_size_id": 4,
+  "sanpham_size": "XL"
+},
+{
+  "_id": {
+    "$oid": "66a32e4e6af81d65047673bf"
+  },
+  "__v": 0,
+  "sanpham_id": 2,
+  "sanpham_size_id": 5,
+  "sanpham_size": "XXL"
+},
+{
+  "_id": {
+    "$oid": "66a332746af81d65047673d0"
+  },
+  "__v": 0,
+  "sanpham_id": 3,
+  "sanpham_size_id": 6,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a332746af81d65047673d1"
+  },
+  "__v": 0,
+  "sanpham_id": 3,
+  "sanpham_size_id": 7,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a332746af81d65047673d2"
+  },
+  "__v": 0,
+  "sanpham_id": 3,
+  "sanpham_size_id": 8,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a332746af81d65047673d3"
+  },
+  "__v": 0,
+  "sanpham_id": 3,
+  "sanpham_size_id": 9,
+  "sanpham_size": "XL"
+},
+{
+  "_id": {
+    "$oid": "66a332746af81d65047673d4"
+  },
+  "__v": 0,
+  "sanpham_id": 3,
+  "sanpham_size_id": 10,
+  "sanpham_size": "XXL"
+},
+{
+  "_id": {
+    "$oid": "66a3334c6af81d65047673d9"
+  },
+  "__v": 0,
+  "sanpham_id": 4,
+  "sanpham_size_id": 11,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a3334c6af81d65047673da"
+  },
+  "__v": 0,
+  "sanpham_id": 4,
+  "sanpham_size_id": 12,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a3334c6af81d65047673db"
+  },
+  "__v": 0,
+  "sanpham_id": 4,
+  "sanpham_size_id": 13,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a3334c6af81d65047673dc"
+  },
+  "__v": 0,
+  "sanpham_id": 4,
+  "sanpham_size_id": 14,
+  "sanpham_size": "XL"
+},
+{
+  "_id": {
+    "$oid": "66a3334c6af81d65047673dd"
+  },
+  "__v": 0,
+  "sanpham_id": 4,
+  "sanpham_size_id": 15,
+  "sanpham_size": "XXL"
+},
+{
+  "_id": {
+    "$oid": "66a334996af81d65047673e2"
+  },
+  "__v": 0,
+  "sanpham_id": 5,
+  "sanpham_size_id": 16,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a334996af81d65047673e3"
+  },
+  "__v": 0,
+  "sanpham_id": 5,
+  "sanpham_size_id": 17,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a334996af81d65047673e4"
+  },
+  "__v": 0,
+  "sanpham_id": 5,
+  "sanpham_size_id": 18,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a334996af81d65047673e5"
+  },
+  "__v": 0,
+  "sanpham_id": 5,
+  "sanpham_size_id": 19,
+  "sanpham_size": "XL"
+},
+{
+  "_id": {
+    "$oid": "66a334996af81d65047673e6"
+  },
+  "__v": 0,
+  "sanpham_id": 5,
+  "sanpham_size_id": 20,
+  "sanpham_size": "XXL"
+},
+{
+  "_id": {
+    "$oid": "66a336536af81d65047673ea"
+  },
+  "__v": 0,
+  "sanpham_id": 6,
+  "sanpham_size_id": 21,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a336536af81d65047673eb"
+  },
+  "__v": 0,
+  "sanpham_id": 6,
+  "sanpham_size_id": 22,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a336536af81d65047673ec"
+  },
+  "__v": 0,
+  "sanpham_id": 6,
+  "sanpham_size_id": 23,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a336536af81d65047673ed"
+  },
+  "__v": 0,
+  "sanpham_id": 6,
+  "sanpham_size_id": 24,
+  "sanpham_size": "XL"
+},
+{
+  "_id": {
+    "$oid": "66a336536af81d65047673ee"
+  },
+  "__v": 0,
+  "sanpham_id": 6,
+  "sanpham_size_id": 25,
+  "sanpham_size": "XXL"
+},
+{
+  "_id": {
+    "$oid": "66a3385f6af81d65047673f1"
+  },
+  "__v": 0,
+  "sanpham_id": 7,
+  "sanpham_size_id": 26,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a3385f6af81d65047673f2"
+  },
+  "__v": 0,
+  "sanpham_id": 7,
+  "sanpham_size_id": 27,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a3385f6af81d65047673f3"
+  },
+  "__v": 0,
+  "sanpham_id": 7,
+  "sanpham_size_id": 28,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a3392e6af81d65047673f6"
+  },
+  "__v": 0,
+  "sanpham_id": 8,
+  "sanpham_size_id": 29,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a3392e6af81d65047673f7"
+  },
+  "__v": 0,
+  "sanpham_id": 8,
+  "sanpham_size_id": 30,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a3392e6af81d65047673f8"
+  },
+  "__v": 0,
+  "sanpham_id": 8,
+  "sanpham_size_id": 31,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a339f06af81d65047673fb"
+  },
+  "__v": 0,
+  "sanpham_id": 9,
+  "sanpham_size_id": 32,
+  "sanpham_size": "S"
+},
+{
+  "_id": {
+    "$oid": "66a339f06af81d65047673fc"
+  },
+  "__v": 0,
+  "sanpham_id": 9,
+  "sanpham_size_id": 33,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a33b3f6af81d6504767400"
+  },
+  "__v": 0,
+  "sanpham_id": 10,
+  "sanpham_size_id": 34,
+  "sanpham_size": "M"
+},
+{
+  "_id": {
+    "$oid": "66a33b3f6af81d6504767401"
+  },
+  "__v": 0,
+  "sanpham_id": 10,
+  "sanpham_size_id": 35,
+  "sanpham_size": "L"
+},
+{
+  "_id": {
+    "$oid": "66a33b3f6af81d6504767402"
+  },
+  "__v": 0,
+  "sanpham_id": 10,
+  "sanpham_size_id": 36,
+  "sanpham_size": "XL"
+}]

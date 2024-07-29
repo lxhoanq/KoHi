@@ -1,0 +1,51 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+  <div class="product-add-content">
+    <form action="/productedit/<%= product.sanpham_id %>" method="POST" enctype="multipart/form-data">
+      <label for="">Tên sản phẩm<span style="color: red;">*</span></label> <br>
+      <input value="<%= product.sanpham_tieude %>" required type="text" name="sanpham_tieude"> <br>
+      <label for="">Mã sản phẩm<span style="color: red;">*</span></label> <br>
+      <input value="<%= product.sanpham_ma %>" required type="text" name="sanpham_ma"> <br>
+      <label for="">Chọn danh mục<span style="color: red;">*</span></label> <br>
+      <select required="required" name="danhmuc_id" id="danhmuc_id">
+        <option value="">--Chọn--</option>
+        <% categories.forEach(category => { %>
+          <option value="<%= category.danhmuc_id %>" <%= product.danhmuc_id == category.danhmuc_id ? 'selected' : '' %>> <%= category.danhmuc_ten %> </option>
+        <% }) %>
+      </select>
+      <label for="">Chọn Loại sản phẩm<span style="color: red;">*</span></label> <br>
+      <select required="required" name="loaisanpham_id" id="loaisanpham_id">
+        <option value="">--Chọn--</option>
+        <% productTypes.forEach(type => { %>
+          <option value="<%= type.loaisanpham_id %>" <%= product.loaisanpham_id == type.loaisanpham_id ? 'selected' : '' %>> <%= type.loaisanpham_ten %> </option>
+        <% }) %>
+      </select>
+      <label for="">Chọn Màu sản phẩm<span style="color: red;">*</span></label> <br>
+      <select required="required" name="color_id" id="">
+        <option value="">--Chọn--</option>
+        <% colors.forEach(color => { %>
+          <option value="<%= color.color_id %>" <%= product.color_id == color.color_id ? 'selected' : '' %>> <%= color.color_ten %> </option>
+        <% }) %>
+      </select>
+      <label for="">Giá sản phẩm<span style="color: red;">*</span></label> <br>
+      <input value="<%= product.sanpham_gia %>" required type="text" name="sanpham_gia"> <br>  
+      <label for="">Chi tiết<span style="color: red;">*</span></label> <br>
+      <textarea class="ckeditor" required name="sanpham_chitiet" cols="60" rows="5"><%= product.sanpham_chitiet %></textarea><br>  
+      <label for="">Bảo quản<span style="color: red;">*</span></label> <br>
+      <textarea class="ckeditor" required name="sanpham_baoquan" cols="60" rows="5"><%= product.sanpham_baoquan %></textarea><br> 
+      <label for="">Ảnh đại diện<span style="color: red;">*</span></label> <br>
+      <img style="width: 100px; height: 100px" src="/uploads/<%= product.sanpham_anh %>"> <br> 
+      <input type="file" name="sanpham_anh"> <br>     
+      <button class="admin-btn" name="submit" type="submit">Gửi</button>  
+    </form>
+  </div>           
+</div>
+</section>
+<section>
+</section>
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

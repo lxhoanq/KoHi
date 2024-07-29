@@ -1,0 +1,50 @@
+<% include layout/header.ejs %>
+
+<section class="history" style="padding-top: 70px; text-align: center;">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 50px;">LỊCH SỬ ĐƠN HÀNG</h2>
+    <% if (orders && orders.length > 0) { %>
+      <% orders.forEach(function(order) { %>
+        <div class="order">
+          <h3 style="font-size: 30px;">Đơn hàng: <%= order.order_id %></h3>
+          <p>Khách hàng: <%= order.customer_name %></p>
+          <p>Số điện thoại: <%= order.customer_phone %></p>
+          <p>Địa chỉ: <%= order.customer_diachi %></p>
+          <p>Ngày đặt hàng: <%= order.order_date %></p>                   
+          <p>Phương thức thanh toán: <%= order.thanhtoan %></p>
+          <p>Phương thức giao hàng: <%= order.giaohang %></p>
+          <table style="margin: 0 auto; text-align: center;">
+            <tr>
+              <th style="text-align: center;">Tên sản phẩm</th>
+              <th style="text-align: center;">Đơn giá</th>
+              <th style="text-align: center;">Số lượng</th>
+              <th style="text-align: center;">Thành tiền</th>
+            </tr>
+              <% let totalAmount = 0; %>
+                <tr>
+                  <td><%= order.sanpham_tieude %></td>
+                  <td><%= parseInt(order.sanpham_gia).toLocaleString() %><sup>đ</sup></td>
+                  <td><%= order.quantitys %></td>
+                  <td>
+                    <% 
+                            const amount = parseInt(order.sanpham_gia) * parseInt(order.quantitys);
+                            totalAmount += amount;
+                        %>
+                        <%= amount.toLocaleString() %>
+
+                  </td>
+                </tr>
+                
+            <tr style="border-top: 2px solid red">
+              
+            </tr>
+          </table>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>Bạn chưa có đơn hàng nào.</p>
+    <% } %>
+  </div>
+</section>
+
+<% include layout/footer.ejs %>

@@ -1,0 +1,34 @@
+<section class="cartegory">
+  <div class="container">
+    <div class="cartegory-top row">
+      <% if (productType) { %>
+        <p><a style="color:#000000;" href="/">Trang chủ</a></p> <span>&#8594;</span>
+        <p><%= productType.danhmuc.danhmuc_ten %></p><span>&#8594;</span>
+        <p><%= productType.loaisanpham_ten %></p>
+      <% } else { %>
+        <p><a style="color:#000000;" href="/">Trang chủ</a></p> <span>&#8594;</span>
+        <p>Vui lòng thêm danh mục</p><span>&#8594;</span>
+        <p>Vui lòng thêm loại sản phẩm</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="cartegory-left">
+        <ul>
+          <% categories.forEach(category => { %>
+            <li class="cartegory-left-li">
+              <a style="cursor: pointer;"><%= category.danhmuc_ten %></a>
+              <ul>
+                <% if (category.productTypes && category.productTypes.length > 0) { %>
+                  <% category.productTypes.forEach(productType => { %>
+                    <li><a href="/category/loaisanpham?loaisanpham_id=<%= productType.loaisanpham_id %>"><%= productType.loaisanpham_ten %></a></li>
+                  <% }) %>
+                <% } else { %>
+                  <li>No product types found</li>
+                <% } %>
+              </ul>
+            </li>
+          <% }) %>
+        </ul>
+      </div>

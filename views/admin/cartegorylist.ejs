@@ -1,0 +1,31 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>ID</th>
+                <th>Danh mục</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+            <% categories.forEach((category, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= category.danhmuc_id %></td>
+                <td><%= category.danhmuc_ten %></td>
+                <td>
+                    <a style="color: rgb(0, 0, 0);" href="/editCategory/<%= category._id %>">Sửa</a>|
+                    <a style="color: rgb(0, 0, 0);" href="#" onclick="deleteCategory('<%= category._id %>');">Xóa</a>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>        
+</div>
+</section>
+<section>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html>

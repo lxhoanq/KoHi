@@ -1,0 +1,21 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+  <div class="form-content">
+    <form action="/coloredit/<%= color._id %>" method="POST" enctype="multipart/form-data">
+      <label for="color_ten">Tên màu:</label>
+      <input class="subcartegory-input" type="text" id="color_ten" name="color_ten" value="<%= color.color_ten %>" required> <br>
+      <label for="">Ảnh đại diện<span style="color: red;">*</span></label> <br>
+      <% if (color.color_anh) { %>
+        <img src="/uploads/<%= color.color_anh %>" alt="<%= color.color_ten %>" style="width: 50px; height: auto;">
+      <% } %>
+      <input type="file" id="color_anh" name="color_anh"> <br>
+
+      <button class="admin-btn" type="submit">Lưu</button>
+    </form>
+  </div>
+</div>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html>

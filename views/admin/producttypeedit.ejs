@@ -1,0 +1,21 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="cartegory-add-content">
+        <form action="/editProductType/<%= productType.loaisanpham_id %>" method="POST">
+            <label for="">Chọn danh mục<span style="color: red;">*</span></label> <br>
+            <select required="required" name="danhmuc_id" id="">
+                <option value="">--Chọn--</option>
+                <% categories.forEach(category => { %>
+                    <option value="<%= category.danhmuc_id %>" <%= category.danhmuc_id == productType.danhmuc_id ? 'selected' : '' %>><%= category.danhmuc_ten %></option>
+                <% }); %>
+            </select><br>
+            <label for="">Chỉnh sửa loại sản phẩm<span style="color: red;">*</span></label> <br>
+            <input class="subcartegory-input" type="text" value="<%= productType.loaisanpham_ten %>" name="loaisanpham_ten">
+            <button class="admin-btn" type="submit">Sửa</button>             
+        </form>
+    </div>           
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+[{
+  "_id": {
+    "$oid": "66901adda9b4d252b868f62a"
+  },
+  "sanpham_id": 0,
+  "sanpham_tieude": "AKASH TEE - BLACK",
+  "sanpham_ma": "Now-01",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 4,
+  "color_id": 4,
+  "sanpham_gia": "395000",
+  "sanpham_chitiet": "KoHi®\r\n\r\nStreetwear\r\n\r\nBased in Saigon\r\n\r\nMade in Vietnam",
+  "sanpham_baoquan": "Không giặt máy",
+  "sanpham_anh": "sanpham_anh-1720720093200.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66906e82c89ee21134e41852"
+  },
+  "sanpham_id": 1,
+  "sanpham_tieude": "CRAYON DEVIL TEE - WHITE",
+  "sanpham_ma": "Now-02",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 4,
+  "color_id": 5,
+  "sanpham_gia": "395000",
+  "sanpham_chitiet": "KoHi®\r\n\r\nStreetwear\r\n\r\nBased in Saigon\r\n\r\nMade in Vietnam",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1720741506905.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a32e4e6af81d65047673ba"
+  },
+  "sanpham_id": 2,
+  "sanpham_tieude": "FRIENDS TEE - CREAM",
+  "sanpham_ma": "Now-03",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 4,
+  "color_id": 0,
+  "sanpham_gia": "395000",
+  "sanpham_chitiet": "KoHi®\r\n\r\nStreetwear\r\n\r\nBased in Saigon",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721970416751.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a332746af81d65047673cf"
+  },
+  "sanpham_id": 3,
+  "sanpham_tieude": "DRAGON PRINTED SHIRTS - BLACK",
+  "sanpham_ma": "Now-04",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 0,
+  "color_id": 4,
+  "sanpham_gia": "395000",
+  "sanpham_chitiet": "KoHi® \r\nStreetwear \r\nBased in Saigon \r\nMade in Vietnam",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721971316460.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3334c6af81d65047673d8"
+  },
+  "sanpham_id": 4,
+  "sanpham_tieude": "DRAGON PRINTED SHIRTS - RED",
+  "sanpham_ma": "Now-05",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 0,
+  "color_id": 1,
+  "sanpham_gia": "395000",
+  "sanpham_chitiet": "KoHi® Streetwear Based in Saigon Made in Vietnam",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721971532039.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a334996af81d65047673e1"
+  },
+  "sanpham_id": 5,
+  "sanpham_tieude": "MULTICOLOR EMBROIDERED JACKET",
+  "sanpham_ma": "Now-06",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 1,
+  "color_id": 4,
+  "sanpham_gia": "199000",
+  "sanpham_chitiet": "KoHi® Streetwear Based in Saigon Made in Vietnam\t",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721971865978.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a336536af81d65047673e9"
+  },
+  "sanpham_id": 6,
+  "sanpham_tieude": "MULTICOLOR EMBROIDERED JACKET",
+  "sanpham_ma": "Now-07",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 1,
+  "color_id": 2,
+  "sanpham_gia": "199000",
+  "sanpham_chitiet": "KoHi® Streetwear Based in Saigon Made in Vietnam\t",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721972316797.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3385f6af81d65047673f0"
+  },
+  "sanpham_id": 7,
+  "sanpham_tieude": "CRYSTAL BABY TEE - RED",
+  "sanpham_ma": "Now-08",
+  "danhmuc_id": 0,
+  "loaisanpham_id": 3,
+  "color_id": 1,
+  "sanpham_gia": "280000",
+  "sanpham_chitiet": "KoHi® Streetwear Based in Saigon Made in Vietnam\t",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721972831556.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3392e6af81d65047673f5"
+  },
+  "sanpham_id": 8,
+  "sanpham_tieude": "CRYSTAL BABY TEE - WHITE",
+  "sanpham_ma": "Now-09",
+  "danhmuc_id": 0,
+  "loaisanpham_id": 3,
+  "color_id": 5,
+  "sanpham_gia": "280000",
+  "sanpham_chitiet": "KoHi® Streetwear Based in Saigon Made in Vietnam\t",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721973038150.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a339f06af81d65047673fa"
+  },
+  "sanpham_id": 9,
+  "sanpham_tieude": "WMN BASIC NYLON PANTS - BLACK",
+  "sanpham_ma": "Now-10",
+  "danhmuc_id": 0,
+  "loaisanpham_id": 6,
+  "color_id": 4,
+  "sanpham_gia": "160000",
+  "sanpham_chitiet": "KoHi® Streetwear Based in Saigon Made in Vietnam\t",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721973232577.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a33b3f6af81d65047673ff"
+  },
+  "sanpham_id": 10,
+  "sanpham_tieude": "BLAZE JEANS",
+  "sanpham_ma": "Now-11",
+  "danhmuc_id": 2,
+  "loaisanpham_id": 2,
+  "color_id": 4,
+  "sanpham_gia": "550000",
+  "sanpham_chitiet": "KoHi® Streetwear Based in Saigon Made in Vietnam\t",
+  "sanpham_baoquan": "Không giặt máy\t",
+  "sanpham_anh": "sanpham_anh-1721973567611.jpg",
+  "__v": 0
+}]

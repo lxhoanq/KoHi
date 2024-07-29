@@ -1,0 +1,50 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <h1 style="color:#333">Tất cả các đơn hàng:</h1>
+    <br>
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>Mã đơn hàng</th>
+                <th>Ngày đặt hàng</th>
+                <th>Tên</th>
+                <th>Điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Giao hàng</th>
+                <th>Thanh toán</th>
+                <th>Chi tiết đơn hàng</th>   
+                <th>Tình trạng</th>              
+                <th>Tùy chỉnh</th>
+            </tr>
+            <% orders.forEach((order, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td>KoHi-<%= order.session_idA.substring(0, 5) %></td>
+                <td><%= order.order_date %></td>
+                <td><%= order.customer_name %></td>
+                <td><%= order.customer_phone %></td>
+                <td><%= order.customer_diachi %>, <%= order.phuong_xa %>, <%= order.quan_huyen %>, <%= order.tinh_tp %> </td>
+                <td><%= order.giaohang %></td>
+                <td><%= order.thanhtoan %></td>
+                <td><a style="color: rgb(0, 0, 0);" href="/order/<%= order._id %>">Xem</a></td>            
+                <td>
+                    <% if (order.statusA == 1) { %>
+                        <span style="color:green">Đã hoàn thành</span>
+                    <% } else { %>
+                        <span style="color:tomato">Chưa hoàn thành</span>
+                    <% } %>
+                </td>
+                <td><a style="color: rgb(0, 0, 0);" href="/deleteOrder/<%= order._id %>" onclick="return confirm('Đơn hàng sẽ bị xóa vĩnh viễn, bạn có chắc muốn tiếp tục không?');">Xóa</a></td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>        
+</div>
+</section>
+<section>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html>

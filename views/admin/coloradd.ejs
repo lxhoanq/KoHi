@@ -1,0 +1,19 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="subcartegory-add-content">
+        <form action="/coloradd" method="POST" enctype="multipart/form-data">
+            <label for="">Tên màu sắc<span style="color: red;">*</span></label> <br>
+            <input class="subcartegory-input" type="text" name="color_ten"> <br>
+            <label for="">Ảnh đại diện<span style="color: red;">*</span></label> <br>
+            <input required type="file" name="color_anh"> <br>   
+            <button class="admin-btn" type="submit">Gửi</button>             
+        </form>
+    </div>           
+</div>
+</section>
+<section>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html>  

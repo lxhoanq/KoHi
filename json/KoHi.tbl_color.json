@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "66900cc00dfb2b11d4b3f6ca"
+  },
+  "color_id": 4,
+  "color_ten": "Đen",
+  "color_anh": "color_anh-1720716480092.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66900cd30dfb2b11d4b3f6cb"
+  },
+  "color_id": 5,
+  "color_ten": "Trắng",
+  "color_anh": "color_anh-1720716499147.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a32b3c6af81d65047673b6"
+  },
+  "color_id": 0,
+  "color_ten": "Cream",
+  "color_anh": "color_anh-1721969468189.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a32ba76af81d65047673b7"
+  },
+  "color_id": 1,
+  "color_ten": "Đỏ",
+  "color_anh": "color_anh-1721969575204.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a335ab6af81d65047673e8"
+  },
+  "color_id": 2,
+  "color_ten": "Hồng",
+  "color_anh": "color_anh-1721972139843.png",
+  "__v": 0
+}]

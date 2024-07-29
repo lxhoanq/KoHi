@@ -1,0 +1,80 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+  <div class="product-add-content">
+    <form action="/productadd" method="POST" enctype="multipart/form-data" id="productForm">
+      <label for="sanpham_tieude">Tên sản phẩm<span style="color: red;">*</span></label> <br>
+      <input required type="text" name="sanpham_tieude"> <br>
+      <label for="sanpham_ma">Mã sản phẩm<span style="color: red;">*</span></label> <br>
+      <input required type="text" name="sanpham_ma"> <br>
+      <label for="danhmuc_id">Chọn danh mục<span style="color: red;">*</span></label> <br>
+      <select required name="danhmuc_id" id="danhmuc_id">
+        <option value="">--Chọn--</option>
+        <% categories.forEach(category => { %>
+          <option value="<%= category.danhmuc_id %>"><%= category.danhmuc_ten %></option>
+        <% }) %>
+      </select> <br>
+      <label for="loaisanpham_id">Chọn Loại sản phẩm<span style="color: red;">*</span></label> <br>
+      <select required name="loaisanpham_id" id="loaisanpham_id" disabled>
+        <option value="">--Chọn danh mục trước--</option>
+      </select> <br>
+      <label for="color_id">Chọn Màu sản phẩm<span style="color: red;">*</span></label> <br>
+      <select required name="color_id" id="color_id">
+        <option value="">--Chọn--</option>
+        <% colors.forEach(color => { %>
+          <option value="<%= color.color_id %>"><%= color.color_ten %></option>
+        <% }) %>
+      </select> <br>
+      <label for="sanpham_size">Chọn Size sản phẩm<span style="color: red;">*</span></label> <br>
+      <div class="sanpham-size">
+        <p>S</p><input type="checkbox" name="sanpham_size[]" value="S">
+        <p>M</p><input type="checkbox" name="sanpham_size[]" value="M">
+        <p>L</p><input type="checkbox" name="sanpham_size[]" value="L">
+        <p>XL</p><input type="checkbox" name="sanpham_size[]" value="XL">
+        <p>XXL</p><input type="checkbox" name="sanpham_size[]" value="XXL">
+      </div> <br>
+      <label for="sanpham_gia">Giá sản phẩm<span style="color: red;">*</span></label> <br>
+      <input required type="text" name="sanpham_gia"> <br>
+      <label for="sanpham_chitiet">Chi tiết<span style="color: red;">*</span></label> <br>
+      <textarea class="ckeditor" required name="sanpham_chitiet" cols="60" rows="5"></textarea><br>
+      <label for="sanpham_baoquan">Bảo quản<span style="color: red;">*</span></label> <br>
+      <textarea class="ckeditor" required name="sanpham_baoquan" cols="60" rows="5"></textarea><br>
+      <label for="sanpham_anh">Ảnh đại diện<span style="color: red;">*</span></label> <br>
+      <input required type="file" name="sanpham_anh"> <br>
+      <button class="admin-btn" name="submit" type="submit">Gửi</button>
+    </form>
+  </div>
+</div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#danhmuc_id').change(function() {
+      var danhMucId = $(this).val();
+      if (danhMucId) {
+        $('#loaisanpham_id').prop('disabled', false); // Bật chọn loại sản phẩm
+        $.ajax({
+          type: 'GET',
+          url: '/api/productTypes/' + danhMucId, // Điều hướng đến API để lấy loại sản phẩm dựa trên danh mục
+          success: function(data) {
+            $('#loaisanpham_id').empty();
+            $('#loaisanpham_id').append('<option value="">--Chọn--</option>');
+            $.each(data, function(key, value) {
+              $('#loaisanpham_id').append('<option value="' + value.loaisanpham_id + '">' + value.loaisanpham_ten + '</option>');
+            });
+          },
+          error: function(err) {
+            console.log(err);
+          }
+        });
+      } else {
+        $('#loaisanpham_id').empty();
+        $('#loaisanpham_id').prop('disabled', true); // Vô hiệu hóa chọn loại sản phẩm nếu chưa chọn danh mục
+        $('#loaisanpham_id').append('<option value="">--Chọn danh mục trước--</option>');
+      }
+    });
+  });
+</script>
+<script src="/js/script.js"></script>
+</body>
+</html>

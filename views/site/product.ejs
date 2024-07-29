@@ -1,0 +1,199 @@
+<% include layout/header.ejs %>
+<section class="product">
+  <div class="container">
+    <!-- Nội dung sản phẩm -->
+    <div class="product-top row">
+      <p><a href="/">Trang chủ</a></p> <span>&#8594;</span>
+      <p><%= danhmuc.danhmuc_ten %></p><span>&#8594;</span>
+      <p><%= loaisanpham.loaisanpham_ten %></p><span>&#8594;</span>
+      <p><%= sanpham.sanpham_tieude %></p>
+    </div>
+
+    <div class="product-content row">
+      <div class="product-content-left row">
+        <div class="product-content-left-big-img">
+          <img class="sanpham_anh" src="/uploads/<%= sanpham.sanpham_anh %>" alt="">
+        </div>
+        <div class="product-content-left-small-img">
+          <% if (sanpham.images && sanpham.images.length > 0) { %>
+            <% sanpham.images.forEach(image => { %>
+              <img src="<%= image %>" alt="">
+            <% }); %>
+          <% } else { %>
+            <p>No additional images available.</p>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="product-content-right">
+        <div class="product-content-right-product-name">
+          <input class="session_id" type="hidden" value="<%= session_id %>">
+          <input class="sanpham_id" type="hidden" value="<%= sanpham.sanpham_id %>">
+          <h1 class="sanpham_tieude"><%= sanpham.sanpham_tieude %></h1>
+          <p><%= sanpham.sanpham_ma %></p>
+        </div>
+
+        <div class="product-content-right-product-price">
+          <p><span><%= new Intl.NumberFormat('de-DE').format(sanpham.sanpham_gia) %></span><sup>đ</sup></p>
+          <input class="sanpham_gia" type="hidden" value="<%= sanpham.sanpham_gia %>">
+        </div>
+
+        <div class="product-content-right-product-color">
+          <p><span style="font-weight: bold;">Màu sắc</span>: <%= color.color_ten %> <span style="color: red;">*</span></p>
+          <div class="product-content-right-product-color-IMG">
+            <img class="color_anh" src="/uploads/<%= color.color_anh %>" alt="">
+          </div>
+        </div>
+        <input id="user_id" type="hidden" value="<%= user ? user._id : '' %>">
+        <div class="product-content-right-product-size">
+          <p style="font-weight: bold">Size:</p>
+          <div class="size">
+            <% sanpham.sanpham_sizes.forEach(size => { %>
+              <div class="size-item">
+                <input class="size-item-input" value="<%= size.sanpham_size %>" name="size-item" type="radio">
+                <span><%= size.sanpham_size %></span>
+              </div>
+            <% }); %>
+          </div>
+          <div class="quantity">
+            <p style="font-weight: bold">Số lượng:</p>
+            <input class="quantitys" type="number" min="0" value="1">
+          </div>
+          <p class="size-alert" style="color: red;"></p>
+        </div>
+
+        <div class="product-content-right-product-button">
+          <button class="add-cart-btn"><i class="fas fa-shopping-cart"></i><p>MUA HÀNG</p></button>
+          <button><p>TÌM TẠI CỬA HÀNG</p></button>
+        </div>
+
+        <div class="product-content-right-product-icon">
+          <div class="product-content-right-product-icon-item">
+            <i class="fas fa-phone-alt"></i><p>Hotline</p>
+          </div>
+          <div class="product-content-right-product-icon-item">
+            <i class="far fa-comments"></i><p>Chat</p>
+          </div>
+          <div class="product-content-right-product-icon-item">
+            <i class="far fa-envelope"></i><p>Mail</p>
+          </div>
+        </div>
+        <div class="product-content-right-bottom">
+          <div class="product-content-right-bottom-top">&#8744;</div>
+          <div class="product-content-right-bottom-content-big">
+            <div class="product-content-right-bottom-title">
+              <div class="product-content-right-bottom-title-item chitiet">
+                <p>Chi tiết</p>
+              </div>
+              <div class="product-content-right-bottom-title-item baoquan">
+                <p>Bảo quản</p>
+              </div>
+              <div class="product-content-right-bottom-title-item size">
+                <p>Tham khảo size</p>
+              </div>
+            </div>
+            <div class="product-content-right-bottom-content">
+              <div class="product-content-right-bottom-content-chitiet">
+                <%= sanpham.sanpham_chitiet %>
+              </div>
+              <div class="product-content-right-bottom-content-baoquan">
+                <%= sanpham.sanpham_baoquan %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-related">
+  <div class="container">
+    <div class="product-related-title">
+      <p>SẢN PHẨM LIÊN QUAN</p>
+    </div>
+    <div class="row justify-between">
+      <% relatedProducts.forEach(product => { %>
+        <div class="product-related-item">
+          <a href="/product/<%= product.sanpham_id %>"><img src="/uploads/<%= product.sanpham_anh %>" alt=""></a>
+          <a href="/product/<%= product.sanpham_id %>"><h1><%= product.sanpham_tieude %></h1></a>
+          <p><%= new Intl.NumberFormat('de-DE').format(product.sanpham_gia) %><sup>đ</sup></p>
+          <span>_new_</span>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // Đồng bộ giỏ hàng từ cơ sở dữ liệu vào localStorage khi trang được tải
+    $.ajax({
+        url: '/cart',
+        method: 'GET',
+        success: function (cartItems) {
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        },
+        error: function (xhr, status, error) {
+            console.error('Có lỗi xảy ra khi tải giỏ hàng');
+        }
+    });
+
+    var selectedSize = '';
+    var productDetails; // Khai báo biến productDetails ở đây
+
+    $('.size-item-input').change(function () {
+        selectedSize = $(this).val();
+    });
+
+    $('.add-cart-btn').click(function () {
+        const sessionId = $('.session_id').val(); // Lấy session_id từ trường ẩn
+        const userId = $('#user_id').val(); // Lấy user_id từ trường ẩn
+
+        // Kiểm tra nếu người dùng chưa đăng nhập
+        if (!userId) {
+            alert('Vui lòng đăng nhập để mua hàng');
+            return; // Dừng thực hiện tiếp
+        }
+
+        if (selectedSize === '') {
+            $('.size-alert').text('Vui lòng chọn size*');
+        } else {
+            productDetails = {
+                session_idA: sessionId, // Đảm bảo giá trị sessionId được truyền chính xác
+                sanpham_id: $('.sanpham_id').val(),
+                sanpham_tieude: $('.sanpham_tieude').text(),
+                sanpham_anh: $('.sanpham_anh').attr('src'),
+                color_anh: $('.color_anh').attr('src'),
+                sanpham_gia: $('.sanpham_gia').val(),
+                quantitys: $('.quantitys').val(),
+                sanpham_size: selectedSize
+            };
+
+            // Lưu giỏ hàng vào localStorage
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            if (!Array.isArray(cart)) {
+                cart = [];
+            }
+            cart.push(productDetails);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            $.ajax({
+                url: '/cart',
+                method: 'POST',
+                data: productDetails,
+                success: function (response) {
+                    console.log(response);
+                    window.location.href = '/cart';
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                    alert('Có lỗi xảy ra khi thêm sản phẩm vào giỏ hàng');
+                }
+            });
+        }
+    });
+});
+
+</script>
+<% include layout/footer.ejs %>

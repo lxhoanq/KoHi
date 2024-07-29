@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "66a386652aef453fdc53d484"
+  },
+  "cart_id": 591,
+  "session_idA": "aJO8XdXBYb1jpt1yFuTsEe8XEwG_5nTT",
+  "user_id": "6",
+  "sanpham_id": 0,
+  "sanpham_tieude": "AKASH TEE - BLACK",
+  "sanpham_anh": "/uploads/sanpham_anh-1720720093200.png",
+  "color_anh": "/uploads/color_anh-1720716480092.png",
+  "sanpham_gia": "395000",
+  "quantitys": "1",
+  "sanpham_size": "M",
+  "__v": 0
+}]

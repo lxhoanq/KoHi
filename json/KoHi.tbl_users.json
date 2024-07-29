@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "669e367a9b6a231c50ef3ab0"
+  },
+  "user_id": 1000,
+  "user_Name": "Admin",
+  "user_Gender": 0,
+  "user_phone": "0328381599",
+  "user_Password": "$2a$10$ofOf4LrwIKkycKE34W5mCO6QzeKPUmqHiqq6pt.D/1nH0MmESc9F2",
+  "user_Email": "Admin@gmail.com",
+  "user_Role": {
+    "role": "ADMIN"
+  },
+  "user_birth": {
+    "$date": "2024-07-22T10:37:46.555Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a00cc029150035a0fb5aef"
+  },
+  "user_id": 6,
+  "user_Name": "Lâm Hoàng",
+  "user_Gender": 0,
+  "user_phone": "0328381599",
+  "user_Password": "$2a$10$VwGz27jIGg18xQGUxEKR8uMml4Ve59PbhMXVjDRRAWhh.cgGh7Uf2",
+  "user_Email": "lamxuanhoangjr@gmail.com",
+  "user_Role": {
+    "role": "CUSTOMER"
+  },
+  "user_birth": {
+    "$date": "2024-07-23T20:04:16.962Z"
+  },
+  "__v": 0,
+  "customer_diachi": "38/8 đường 19",
+  "customer_huyen": "762",
+  "customer_tinh": "79",
+  "customer_xa": "26812",
+  "user_diachi": "38/8 đường 19",
+  "user_huyen": "762",
+  "user_tinh": "79",
+  "user_xa": "26812"
+},
+{
+  "_id": {
+    "$oid": "66a03e5f2d45e6306ce916a6"
+  },
+  "user_id": 7,
+  "user_Name": "Hoàng",
+  "user_Gender": 0,
+  "user_phone": "0328381599",
+  "user_Password": "$2a$10$1wzojn7OM1ipZNCFR8N.ieQCYj9z.bouWvGoK7xO91NbkMOq3AZDi",
+  "user_Email": "lamxuanhoangjr123@gmail.com",
+  "user_Role": {
+    "role": "CUSTOMER"
+  },
+  "customer_xa": "23570",
+  "customer_huyen": "622",
+  "customer_tinh": "64",
+  "customer_diachi": "102 Âu Cơ",
+  "user_birth": {
+    "$date": "2024-07-23T23:35:59.879Z"
+  },
+  "__v": 0
+}]

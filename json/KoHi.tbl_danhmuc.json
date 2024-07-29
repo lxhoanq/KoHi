@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "6691a98bd53a30458c663a89"
+  },
+  "danhmuc_id": 2,
+  "danhmuc_ten": "Nam",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6691a993d53a30458c663a8a"
+  },
+  "danhmuc_id": 0,
+  "danhmuc_ten": "Nữ",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6697bf95d1235857c02f1bbc"
+  },
+  "danhmuc_id": 1,
+  "danhmuc_ten": "Liên hệ",
+  "__v": 0
+}]

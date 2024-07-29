@@ -1,0 +1,49 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>ID</th>
+                <th>Tiêu đề</th>
+                <th>Mã</th>
+                <th>Danh mục</th>
+                <th>Loại sản phẩm</th>
+                <th>Màu</th>
+                <th>Giá</th>
+                <th>Chi tiết</th>
+                <th>Bảo quản</th>
+                <th>Ảnh</th>
+                <th>Ảnh sản phẩm</th>
+                <th>Size sản phẩm</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+            <% products.forEach((product, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= product.sanpham_id %></td>
+                    <td><%= product.sanpham_tieude %></td>
+                    <td><%= product.sanpham_ma %></td>
+                    <td><%= product.danhmuc_ten %></td>
+                    <td><%= product.loaisanpham_ten %></td>
+                    <td><%= product.color_ten %></td>
+                    <td><%= product.sanpham_gia %></td>
+                    <td><%= product.sanpham_chitiet %></td>
+                    <td><%= product.sanpham_baoquan %></td>
+                    <td><img style="width: 100px; height: auto" src="/uploads/<%= product.sanpham_anh %>" alt="Product Image"></td>
+                    <td><a style="color: rgb(0, 0, 0);" href="/productphotolist/<%= product.sanpham_id %>">Xem</a></td>
+                    <td><a style="color: rgb(0, 0, 0);" href="/productsizelist/<%= product.sanpham_id %>">Xem</a></td>
+                    <td>
+                        <a style="color: rgb(0, 0, 0);" href="/productedit/<%= product.sanpham_id %>">Sửa</a>|<a style="color: rgb(0, 0, 0);" href="#" onclick="deleteProduct('<%= product.sanpham_id %>');">Xóa</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+</div>
+</section>
+<section></section>
+<script src="/js/script.js"></script>
+</body>
+</html>

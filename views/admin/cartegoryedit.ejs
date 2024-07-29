@@ -1,0 +1,17 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="cartegory-add-content">
+        <form action="/editCategory/<%= category._id %>" method="POST">
+            <label for="">Chỉnh sửa danh mục <span style="color: red;">*</span></label> <br>
+            <input type="text" name="danhmuc_ten" value="<%= category.danhmuc_ten %>">
+            <button class="admin-btn" type="submit">Sửa</button>
+        </form>
+    </div>
+</div>
+</section>
+<section>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html>

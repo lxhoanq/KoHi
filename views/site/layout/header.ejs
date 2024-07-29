@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <base href="http://localhost:3000/">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>KoHi</title>
+    <link rel="shortcut icon" href="assets/ico/favicon.html">
+</head>
+<body>
+    <section class="top">
+        <div class="container">
+            <div class="row">
+                <div class="top-logo">
+                    <a href="/"><img src="/image/kohi.png" alt="" style="width: 50px;"></a>
+                </div>
+                <div class="top-menu-items">
+                    <ul id="danhmuc-menu">
+                    </ul>
+                </div>
+                <div class="top-menu-icons">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="tìm kiếm">
+                            <i class="fas fa-search"></i>
+                        </li>
+                        <% if (user) { %>
+                            <li>
+                                <div class="user-menu">
+                                    <i class="fa fa-user"></i>
+                                    <div class="user-menu-dropdown">
+                                        <p><%= user.user_Name %></p>
+                                        <p><a href="/order-history">Lịch sử đơn hàng</a></p>
+                                        <p><a href="/dang-xuat.html">Đăng xuất</a></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/cart"><i class="fas fa-shopping-cart"></i><span></span></a>
+                                <div class="cart-content-mini">
+                                    <div class="cart-content-mini-top">
+                                        <p>Giỏ hàng</p>
+                                    </div>
+                                    <% if (cartItems && cartItems.length > 0) { %>
+                                        <% cartItems.forEach(function(item) { %>
+                                            <div class="cart-content-mini-item" style="padding-top: 12px;">
+                                                <img style="width:80px; height: auto;" src="<%= item.sanpham_anh %>" alt="">
+                                                <div class="cart-content-item-text">
+                                                    <h1><%= item.sanpham_tieude %></h1>
+                                                    <p>Giá <%= parseInt(item.sanpham_gia.replace(/\D/g, '')).toLocaleString('vi-VN') %><sup>đ</sup></p>
+                                                    <p>Size: <%= item.sanpham_size %></p>
+                                                    <p>SL: <%= item.quantitys %></p>
+                                                </div>
+                                            </div>
+                                        <% }); %>
+                                        <div class="cart-content-mini-bottom">
+                                            <p><a href="/cart">...Xem chi tiết</a></p>
+                                        </div>
+                                    <% } else { %>
+                                        <div class="cart-content-mini-bottom">
+                                            
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </li>
+                        <% } else { %>
+                            <li>
+                                <a href="/dang-nhap.html"><i class="fa fa-user"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="redirectToLogin()"><i class="fas fa-shopping-cart"></i><span></span></a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <script type="text/javascript">
+        // Redirect to login page if the user is not logged in
+        function redirectToLogin() {
+            window.location.href = '/dang-nhap.html';
+        }
+    
+        // Function to handle product type click event
+        function handleProductTypeClick(e) {
+            e.preventDefault();
+            var loaisanpham_id = $(this).data('loaisanpham-id');
+            
+            // Check if we are on the category page
+            if (window.location.pathname.includes('site/category')) {
+                // If on the category page, use AJAX to fetch and update content
+                $.ajax({
+                    type: 'GET',
+                    url: '/category/loaisanpham',
+                    data: { loaisanpham_id: loaisanpham_id },
+                    success: function(data) {
+                        $('.cartegory-right-content').html(data); // Update the product list
+                    },
+                    error: function(err) {
+                        console.error('Error fetching products by loaisanpham_id:', err);
+                    }
+                });
+            } else {
+                // If not on the category page, navigate to the category page with the product type
+                window.location.href = '/category/loaisanpham?loaisanpham_id=' + loaisanpham_id;
+            }
+        }
+    
+        // Ensure the function is called on document ready
+        $(document).ready(function() {
+            // Use Promise.all to send GET requests for both categories and product types
+            Promise.all([
+                $.ajax({
+                    type: 'GET',
+                    url: '/category1/danhmuc',
+                }),
+                $.ajax({
+                    type: 'GET',
+                    url: '/product_type/loaisanpham',
+                })
+            ]).then(function(results) {
+                var danhMucMenu = $('#danhmuc-menu');
+                var danhmucs = results[0]; // Category data
+                var loaisanphams = results[1]; // Product type data
+    
+                // Loop through the categories
+                danhmucs.forEach(function(danhmuc) {
+                    // Create a list item for each category
+                    var danhMucListItem = $('<li>' + danhmuc.danhmuc_ten + '<ul class="top-menu-item" id="loaisanpham-' + danhmuc.danhmuc_id + '"></ul></li>');
+    
+                    // Filter product types that belong to the current category
+                    var loaisanphamOfDanhMuc = loaisanphams.filter(function(item) {
+                        return item.danhmuc_id === danhmuc.danhmuc_id;
+                    });
+    
+                    // Add each product type to the corresponding category
+                    loaisanphamOfDanhMuc.forEach(function(item) {
+                        var listItem = '<li><a href="#" class="loaisanpham-link" data-loaisanpham-id="' + item.loaisanpham_id + '">' + item.loaisanpham_ten + '</a></li>';
+                        danhMucListItem.find('#loaisanpham-' + danhmuc.danhmuc_id).append(listItem);
+                    });
+    
+                    // Append the category to the menu
+                    danhMucMenu.append(danhMucListItem);
+                });
+    
+                // Bind the click event handler to product type links
+                $('.loaisanpham-link').on('click', handleProductTypeClick);
+            }).catch(function(err) {
+                console.error('Error fetching data:', err);
+            });
+        });
+
+        $(document).ready(function() {
+});
+
+/*-----------------------cart-mini-----------------*/
+$(document).ready(function() {
+    // Function to handle adding item to cart
+    function addToCart(sanpham_id, sanpham_tieude, sanpham_anh, color_anh, sanpham_gia, quantitys, sanpham_size) {
+        $.ajax({
+            type: 'POST',
+            url: '/cart',
+            data: {
+                sanpham_id: sanpham_id,
+                sanpham_tieude: sanpham_tieude,
+                sanpham_anh: sanpham_anh,
+                color_anh: color_anh,
+                sanpham_gia: sanpham_gia,
+                quantitys: quantitys,
+                sanpham_size: sanpham_size
+            },
+            success: function(response) {
+                // Fetch and update the mini cart
+                fetchMiniCart();
+            },
+            error: function(err) {
+                console.error('Error adding item to cart:', err);
+            }
+        });
+    }
+
+    // Function to fetch and update the mini cart
+    function fetchMiniCart() {
+        $.ajax({
+            type: 'GET',
+            url: '/cart/mini',
+            success: function(data) {
+                // Handle JSON response and update the mini cart
+                if (Array.isArray(data) && data.length > 0) {
+                    var cartContent = '';
+                    data.forEach(function(item) {
+                        cartContent += '<div class="cart-content-mini-item" style="padding-top: 12px;">';
+                        cartContent += '<img style="width:80px; height: auto; " src="' + item.sanpham_anh + '" alt="">';
+                        cartContent += '<div class="cart-content-item-text">';
+                        cartContent += '<h1>' + item.sanpham_tieude + '</h1>';
+                        cartContent += '<p>Giá ' + parseInt(item.sanpham_gia.replace(/\D/g, '')).toLocaleString('vi-VN') + '<sup>đ</sup></p>';
+                        cartContent += '<p>Size: ' + item.sanpham_size + '</p>';
+                        cartContent += '<p>SL: ' + item.quantitys + '</p>';
+                        cartContent += '</div></div>';
+                    });
+                    $('.cart-content-mini-item-text').html(cartContent+ '<div class="cart-content-mini-bottom"></div>');
+                } else {
+                    $('.cart-content-mini').html('<div class="cart-content-mini"><div class="cart-content-mini-top"><p>Giỏ hàng</p></div> <div class="cart-content-mini-item"> <div class="cart-content-item-text"></div></div> <div class="cart-content-mini-bottom"><p><a href="/cart">...Xem chi tiết</a></p></div></div>');
+                }
+            },
+            error: function(err) {
+                console.error('Error fetching mini cart:', err);
+            }
+        });
+    }
+
+    // Example event listener for add to cart button
+    $('.add-to-cart-button').on('click', function() {
+        const sanpham_id = $(this).data('sanpham-id');
+        const sanpham_tieude = $(this).data('sanpham-tieude');
+        const sanpham_anh = $(this).data('sanpham-anh');
+        const color_anh = $(this).data('color-anh');
+        const sanpham_gia = $(this).data('sanpham-gia');
+        const quantitys = $(this).data('quantitys');
+        const sanpham_size = $(this).data('sanpham-size');
+        
+        addToCart(sanpham_id, sanpham_tieude, sanpham_anh, color_anh, sanpham_gia, quantitys, sanpham_size);
+    });
+
+    // Initial fetch of mini cart on page load
+    fetchMiniCart();
+});
+
+
+
+    </script>
+    
+    
+    
+<script type="text/javascript" :src="/js/slider.js"></script>

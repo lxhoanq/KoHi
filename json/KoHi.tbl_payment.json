@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "66a355632aef453fdc53d47a"
+  },
+  "payment_id": 129,
+  "session_idA": "JOBuj5fDhmJGP_mWtsOjQNGgrJXo-SB0",
+  "user_id": 6,
+  "giaohang": "Giao hàng chuyển phát nhanh",
+  "thanhtoan": "Thu tiền tận nơi",
+  "order_date": "26/07/2024",
+  "statusA": "1",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a355c02aef453fdc53d47e"
+  },
+  "payment_id": 130,
+  "session_idA": "-srq-aDhHwByZZj3JI_o6HPC2WyyHhJs",
+  "user_id": 6,
+  "giaohang": "Giao hàng chuyển phát nhanh",
+  "thanhtoan": "Thu tiền tận nơi",
+  "order_date": "26/07/2024",
+  "statusA": "1",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a356ae2aef453fdc53d482"
+  },
+  "payment_id": 131,
+  "session_idA": "7dOS8mv2dycjBVUBWkvgWZBIuFzUbieG",
+  "user_id": 6,
+  "giaohang": "Giao hàng chuyển phát nhanh",
+  "thanhtoan": "Thu tiền tận nơi",
+  "order_date": "26/07/2024",
+  "statusA": "1",
+  "__v": 0
+}]

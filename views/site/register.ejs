@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style1.css" rel="stylesheet" type="text/css" media="all"/>
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <title>Register</title>
+</head>
+<body>
+    <div class="top-logo">
+        <a href="/"><img src="../image/kohi.png" alt="" style="width: 60px;"></a>
+        <div class="S9AO00">Đăng ký</div>
+    </div>
+    <div class="regist">
+        <div class="regist-form">
+            <span style="color:red; font-family: 'Bona Nova', serif;">
+                <% if (typeof result !== 'undefined') { %>
+                    <%= result %>
+                <% } %>
+            </span>
+            <h1>Đăng ký</h1>
+            <form action="/dang-ky.html" method="POST">
+                <input type="text" name="user_Name" placeholder="Name" required>
+                <div class="Gender">
+                    <label>
+                        <input class="inputGender" type="radio" name="user_Gender" value="0" required> Nam
+                    </label>
+                    <label>
+                        <input class="inputGender" type="radio" name="user_Gender" value="1" required> Nữ
+                    </label>
+                    <label>
+                        <input class="inputGender" type="radio" name="user_Gender" value="2" required> Khác
+                    </label>
+                </div>
+                <input type="text" name="user_phone" placeholder="Phone" required>
+                <input type="email" name="user_Email" placeholder="Email" required>
+                <input type="password" name="user_Password" placeholder="Password" required>
+                <input type="password" name="confirm_Password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+                <p style="color: rgba(0,0,0,.26); margin-top: 10px;">Bạn đã có tài khoản? <a href="/dang-nhap.html" style="color: red;">Đăng nhập</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        // AJAX submission
+        $('form').submit(function(event) {
+            event.preventDefault(); 
+
+            var postData = {
+                user_Name: $('input[name="user_Name"]').val(),
+                user_Gender: $('input[name="user_Gender"]:checked').val(),
+                user_phone: $('input[name="user_phone"]').val(),
+                user_Password: $('input[name="user_Password"]').val(),
+                confirm_Password: $('input[name="confirm_Password"]').val(),
+                user_Email: $('input[name="user_Email"]').val(),
+                user_Role: { role: 'customer' } 
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/dang-ky.html',
+                data: postData,
+                success: function(response) {
+                    console.log(response);
+                    if(response.isSucceed) {
+                        alert('Đăng kí tài khoản thành công');
+                        window.location.href = '/dang-nhap.html'; 
+                    } else {
+                        alert(response.message); 
+                    }
+                },
+                error: function(err) {
+                    console.error('Error:', err);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+
+<div class="admin-content-right">
+    <div class="subcartegory-add-content">
+        <form action="/productphotoadd" method="POST" enctype="multipart/form-data">
+            <label for="sanpham_id">Chọn mã sản phẩm<span style="color: red;">*</span></label> <br>
+            <select required name="sanpham_id">
+                <option value="">--Chọn--</option>
+                <% products.forEach(product => { %>
+                <option value="<%= product.sanpham_id %>"><%= product.sanpham_ma %></option>
+                <% }) %>
+            </select> <br>
+            <label for="sanpham_anh">Ảnh Sản phẩm<span style="color: red;">*</span></label> <br>
+            <input required type="file" name="sanpham_anh"> <br>   
+            <button class="admin-btn" type="submit">Gửi</button>             
+        </form>
+    </div>           
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

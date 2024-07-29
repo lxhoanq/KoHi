@@ -1,0 +1,30 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>ID</th>
+                <th>Tên màu</th>
+                <th>Ảnh</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+            <% colors.forEach((color, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= color.color_id %></td>
+                <td><%= color.color_ten %></td>
+                <td><img src="/uploads/<%= color.color_anh %>" alt="<%= color.color_ten %>" style="width: 50px; height: auto;"></td>
+                <td>
+                    <a style="color: rgb(0, 0, 0);" href="/coloredit/<%= color._id %>">Sửa</a> |
+                    <a style="color: rgb(0, 0, 0);" href="#" onclick="deleteColor('<%= color._id %>')">Xóa</a>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>

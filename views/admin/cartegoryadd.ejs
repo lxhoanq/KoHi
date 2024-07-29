@@ -1,0 +1,21 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="cartegory-add-content">
+        <% if (typeof error !== 'undefined') { %>
+          <p style="color: red;"><%= error %></p>
+        <% } %>
+        <form action="/categoryadd" method="post" >
+            <label for="cartegory_name">Vui lòng thêm danh mục<span style="color: red;">*</span></label> <br>
+            <input type="text" name="cartegory_name" >
+            <button class="admin-btn" type="submit">Gửi</button>             
+        </form>
+    </div>           
+</div>          
+</div>
+</section>
+<section>
+</section>
+<script src="/js/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,198 @@
+[{
+  "_id": {
+    "$oid": "669535518f2a330cf82a33c6"
+  },
+  "sanpham_anh_id": 0,
+  "sanpham_id": 0,
+  "sanpham_anh": "/uploads/sanpham_anh-1721054545103.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669538198f2a330cf82a33c7"
+  },
+  "sanpham_anh_id": 1,
+  "sanpham_id": 0,
+  "sanpham_anh": "/uploads/sanpham_anh-1721055257052.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669538488f2a330cf82a33c9"
+  },
+  "sanpham_anh_id": 3,
+  "sanpham_id": 0,
+  "sanpham_anh": "/uploads/sanpham_anh-1721055304859.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669538558f2a330cf82a33ca"
+  },
+  "sanpham_anh_id": 4,
+  "sanpham_id": 0,
+  "sanpham_anh": "/uploads/sanpham_anh-1721055317725.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a32ec36af81d65047673c0"
+  },
+  "sanpham_anh_id": 0,
+  "sanpham_id": 2,
+  "sanpham_anh": "/uploads/sanpham_anh-1721970371974.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a32ece6af81d65047673c1"
+  },
+  "sanpham_anh_id": 1,
+  "sanpham_id": 2,
+  "sanpham_anh": "/uploads/sanpham_anh-1721970382325.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a32f0b6af81d65047673c3"
+  },
+  "sanpham_anh_id": 3,
+  "sanpham_id": 2,
+  "sanpham_anh": "/uploads/sanpham_anh-1721970443149.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a32f1e6af81d65047673c4"
+  },
+  "sanpham_anh_id": 4,
+  "sanpham_id": 2,
+  "sanpham_anh": "/uploads/sanpham_anh-1721970462439.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a332ac6af81d65047673d5"
+  },
+  "sanpham_anh_id": 5,
+  "sanpham_id": 3,
+  "sanpham_anh": "/uploads/sanpham_anh-1721971372976.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a332b66af81d65047673d6"
+  },
+  "sanpham_anh_id": 6,
+  "sanpham_id": 3,
+  "sanpham_anh": "/uploads/sanpham_anh-1721971382506.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a332bf6af81d65047673d7"
+  },
+  "sanpham_anh_id": 7,
+  "sanpham_id": 3,
+  "sanpham_anh": "/uploads/sanpham_anh-1721971391610.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a333896af81d65047673de"
+  },
+  "sanpham_anh_id": 8,
+  "sanpham_id": 4,
+  "sanpham_anh": "/uploads/sanpham_anh-1721971593200.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a333906af81d65047673df"
+  },
+  "sanpham_anh_id": 9,
+  "sanpham_id": 4,
+  "sanpham_anh": "/uploads/sanpham_anh-1721971600763.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a333966af81d65047673e0"
+  },
+  "sanpham_anh_id": 10,
+  "sanpham_id": 4,
+  "sanpham_anh": "/uploads/sanpham_anh-1721971606120.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3357e6af81d65047673e7"
+  },
+  "sanpham_anh_id": 11,
+  "sanpham_id": 5,
+  "sanpham_anh": "/uploads/sanpham_anh-1721972094452.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3366a6af81d65047673ef"
+  },
+  "sanpham_anh_id": 12,
+  "sanpham_id": 6,
+  "sanpham_anh": "/uploads/sanpham_anh-1721972330091.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3387e6af81d65047673f4"
+  },
+  "sanpham_anh_id": 13,
+  "sanpham_id": 7,
+  "sanpham_anh": "/uploads/sanpham_anh-1721972862810.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a3393a6af81d65047673f9"
+  },
+  "sanpham_anh_id": 14,
+  "sanpham_id": 8,
+  "sanpham_anh": "/uploads/sanpham_anh-1721973050233.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a33a0c6af81d65047673fd"
+  },
+  "sanpham_anh_id": 15,
+  "sanpham_id": 9,
+  "sanpham_anh": "/uploads/sanpham_anh-1721973260404.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a33a156af81d65047673fe"
+  },
+  "sanpham_anh_id": 16,
+  "sanpham_id": 9,
+  "sanpham_anh": "/uploads/sanpham_anh-1721973269576.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a33b556af81d6504767403"
+  },
+  "sanpham_anh_id": 17,
+  "sanpham_id": 10,
+  "sanpham_anh": "/uploads/sanpham_anh-1721973589719.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a33b5b6af81d6504767404"
+  },
+  "sanpham_anh_id": 18,
+  "sanpham_id": 10,
+  "sanpham_anh": "/uploads/sanpham_anh-1721973595857.jpg",
+  "__v": 0
+}]

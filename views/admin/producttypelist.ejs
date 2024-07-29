@@ -1,0 +1,27 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>ID</th>
+                <th>Danh mục</th>
+                <th>Loại sản phẩm</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+            <% producttypelist.forEach((producttype, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= producttype.danhmuc_id %></td>
+                <td><%= producttype.danhmuc_ten %></td>
+                <td><%= producttype.loaisanpham_ten %></td>
+                <td><a style="color: rgb(0, 0, 0);" href="/editProductType/<%= producttype.loaisanpham_id %>">Sửa</a> | <a style="color: rgb(0, 0, 0);" href="#" onclick="deleteProducttypelist('<%= producttype.loaisanpham_id %>');">Xóa</a></td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>        
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>

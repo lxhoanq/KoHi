@@ -1,0 +1,37 @@
+<% include header.ejs %>
+<% include leftside.ejs %>
+
+<div class="admin-content-right">
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Stt</th>
+                <th>ID Ảnh</th>
+                <th>ID Sản phẩm</th>
+                <th>Mã Sản phẩm</th>
+                <th>Ảnh</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+
+            <% products.forEach((product, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= product.sanpham_anh_id %></td>
+                <td><%= product.sanpham_id %></td>
+                <% if (product.sanpham_info && product.sanpham_info.length > 0) { %>
+                    <td><%= product.sanpham_info[0].sanpham_ma %></td>
+                <% } else { %>
+                    <td>Thông tin không có sẵn</td>
+                <% } %>
+                <td><img style="width: 100px; height: auto" src="<%= product.sanpham_anh %>" alt="Product Image"></td>
+                <td><a style="color: rgb(0, 0, 0);" href="#" onclick="deletePhoto('<%= product.sanpham_anh_id %>');">Xóa</a></td>
+            </tr>
+            <% }) %>
+            
+        </table>
+    </div>
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
